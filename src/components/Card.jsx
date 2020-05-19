@@ -11,6 +11,7 @@ function App(props) {
       <div className="bottom">
         <Details detailsInfo={props.phone} />
         <Details detailsInfo={props.email} />
+        <Details detailsInfo={props.id} />
       </div>
     </div>
   );

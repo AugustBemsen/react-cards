@@ -2,11 +2,25 @@ import React from "react";
 import Card from "./Card";
 import { contacts } from "../contacts";
 
+const createContact = contacts => {
+  return (
+    <Card
+      key={contacts.key}
+      name={contacts.name}
+      img={contacts.imgURL}
+      phone={contacts.phone}
+      email={contacts.email}
+      id={contacts.key}
+    />
+  );
+};
+
 function App(props) {
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
-      <Card
+      {contacts.map(createContact)};
+      {/* <Card
         name={contacts[0].name}
         img={contacts[0].imgURL}
         phone={contacts[0].phone}
@@ -23,7 +37,7 @@ function App(props) {
         img={contacts[2].imgURL}
         phone={contacts[2].phone}
         email={contacts[2].email}
-      />
+      /> */}
     </div>
   );
 }
